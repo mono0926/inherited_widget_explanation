@@ -24,7 +24,10 @@ class _HomePage extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.refresh),
-        onPressed: () => Provider.of<_FizzBuzz>(context).increment(),
+        onPressed: () => Provider.of<_FizzBuzz>(
+          context,
+          listen: false,
+        ).increment(),
       ),
       body: Center(
         child: const _Message(),
