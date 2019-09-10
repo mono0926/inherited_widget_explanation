@@ -16,10 +16,10 @@ class _HomePage extends StatefulWidget {
   const _HomePage({Key key}) : super(key: key);
 
   @override
-  __HomePageState createState() => __HomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class __HomePageState extends State<_HomePage> {
+class _HomePageState extends State<_HomePage> {
   var _count = 1;
 
   @override
