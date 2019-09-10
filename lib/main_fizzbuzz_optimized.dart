@@ -60,6 +60,21 @@ class _StatefulInheritedState extends State<_StatefulInherited> {
   void increment() => setState(() => _count++);
 }
 
+class _Inherited extends InheritedWidget {
+  const _Inherited({
+    Key key,
+    @required this.state,
+    @required Widget child,
+  }) : super(key: key, child: child);
+
+  final _StatefulInheritedState state;
+
+  // Stateのmessageで比較したいところだが、Stateはmutableで
+  // 過去の値との比較不可能のため仕方なく常にtrue
+  @override
+  bool updateShouldNotify(_Inherited old) => true;
+}
+
 class _HomePage extends StatelessWidget {
   const _HomePage({Key key}) : super(key: key);
   @override
@@ -91,19 +106,4 @@ class _Message extends StatelessWidget {
       style: TextStyle(fontSize: 64),
     );
   }
-}
-
-class _Inherited extends InheritedWidget {
-  const _Inherited({
-    Key key,
-    @required this.state,
-    @required Widget child,
-  }) : super(key: key, child: child);
-
-  final _StatefulInheritedState state;
-
-  // Stateのmessageで比較したいところだが、Stateはmutableで
-  // 過去の値との比較不可能のため仕方なく常にtrue
-  @override
-  bool updateShouldNotify(_Inherited old) => true;
 }
