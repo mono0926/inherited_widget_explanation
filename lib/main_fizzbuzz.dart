@@ -77,10 +77,9 @@ class _Inherited extends InheritedWidget {
     @required bool listen,
   }) {
     return listen
-        ? context.inheritFromWidgetOfExactType(_Inherited) as _Inherited
-        : context
-            .ancestorInheritedElementForWidgetOfExactType(_Inherited)
-            .widget as _Inherited;
+        ? context.dependOnInheritedWidgetOfExactType<_Inherited>()
+        : context.getElementForInheritedWidgetOfExactType<_Inherited>().widget
+            as _Inherited;
   }
 
   @override

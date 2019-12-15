@@ -30,10 +30,9 @@ class _StatefulInherited extends StatefulWidget {
     @required bool listen,
   }) {
     return listen
-        ? (context.inheritFromWidgetOfExactType(_Inherited) as _Inherited).state
-        : (context
-                .ancestorInheritedElementForWidgetOfExactType(_Inherited)
-                .widget as _Inherited)
+        ? context.dependOnInheritedWidgetOfExactType<_Inherited>().state
+        : (context.getElementForInheritedWidgetOfExactType<_Inherited>().widget
+                as _Inherited)
             .state;
   }
 }
