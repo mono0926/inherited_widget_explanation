@@ -6,8 +6,8 @@ class App extends StatelessWidget {
   const App({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const _HomePage(),
+    return const MaterialApp(
+      home: _HomePage(),
     );
   }
 }
@@ -16,11 +16,11 @@ class _HomePage extends StatelessWidget {
   const _HomePage({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return _Inherited(
+    return const _Inherited(
       message: '🐶',
       child: Scaffold(
         body: Center(
-          child: const _Message(),
+          child: _Message(),
         ),
       ),
     );
@@ -33,7 +33,7 @@ class _Message extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'Message: ${_Inherited.of(context, listen: false).message}',
-      style: TextStyle(fontSize: 96),
+      style: const TextStyle(fontSize: 96),
     );
   }
 }

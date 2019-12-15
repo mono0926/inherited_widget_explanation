@@ -29,8 +29,8 @@ class _HomePage extends StatelessWidget {
           listen: false,
         ).increment(),
       ),
-      body: Center(
-        child: const _Message(),
+      body: const Center(
+        child: _Message(),
       ),
     );
   }
@@ -43,7 +43,7 @@ class _Message extends StatelessWidget {
     print('_Message: rebuild');
     return Text(
       'Message: ${Provider.of<_FizzBuzz>(context).message}',
-      style: TextStyle(fontSize: 64),
+      style: const TextStyle(fontSize: 64),
     );
   }
 }

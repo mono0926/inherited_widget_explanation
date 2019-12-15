@@ -6,8 +6,8 @@ class App extends StatelessWidget {
   const App({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const _HomePage(),
+    return const MaterialApp(
+      home: _HomePage(),
     );
   }
 }
@@ -31,8 +31,8 @@ class _HomePageState extends State<_HomePage> {
           child: Icon(Icons.refresh),
           onPressed: () => setState(() => _count++),
         ),
-        body: Center(
-          child: const _Message(),
+        body: const Center(
+          child: _Message(),
         ),
       ),
     );
@@ -58,7 +58,7 @@ class _Message extends StatelessWidget {
         // 変更監視する
         listen: true,
       ).message}',
-      style: TextStyle(fontSize: 64),
+      style: const TextStyle(fontSize: 64),
     );
   }
 }

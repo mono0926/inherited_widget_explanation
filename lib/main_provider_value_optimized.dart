@@ -7,8 +7,8 @@ class App extends StatelessWidget {
   const App({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const _StatefulProvider(
+    return const MaterialApp(
+      home: _StatefulProvider(
         child: _HomePage(),
       ),
     );
@@ -63,8 +63,8 @@ class _HomePage extends StatelessWidget {
             Provider.of<_StatefulProviderState>(context, listen: false)
                 .increment(),
       ),
-      body: Center(
-        child: const _Message(),
+      body: const Center(
+        child: _Message(),
       ),
     );
   }
@@ -77,7 +77,7 @@ class _Message extends StatelessWidget {
     print('_Message: rebuild');
     return Text(
       'Message: ${Provider.of<String>(context)}',
-      style: TextStyle(fontSize: 64),
+      style: const TextStyle(fontSize: 64),
     );
   }
 }

@@ -6,8 +6,8 @@ class App extends StatelessWidget {
   const App({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const _StatefulInherited(
+    return const MaterialApp(
+      home: _StatefulInherited(
         child: _HomePage(),
       ),
     );
@@ -85,8 +85,8 @@ class _HomePage extends StatelessWidget {
         onPressed: () =>
             _StatefulInherited.of(context, listen: false).increment(),
       ),
-      body: Center(
-        child: const _Message(),
+      body: const Center(
+        child: _Message(),
       ),
     );
   }
@@ -103,7 +103,7 @@ class _Message extends StatelessWidget {
         // 変更監視する
         listen: true,
       ).message}',
-      style: TextStyle(fontSize: 64),
+      style: const TextStyle(fontSize: 64),
     );
   }
 }
